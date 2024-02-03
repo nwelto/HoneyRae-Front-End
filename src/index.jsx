@@ -10,6 +10,8 @@ import TicketDetails from "./components/tickets/TicketDetails";
 import CreateTicket from "./components/tickets/CreateTicket";
 import CustomerDetails from "./components/cust/CustomerDetails";
 import CustomerList from "./components/cust/Customers";
+import EmployeeList from "./components/emp/Employee";
+import EmployeeDetails from "./components/emp/EmployeeDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +25,8 @@ root.render(
         </Route>
         <Route path="customers" element={<CustomerList />} /> 
         <Route path="customers/:customerId" element={<CustomerDetails />} />
+        <Route path="employees" element={<EmployeeList />} />
+        <Route path="employees/:employeeId" element={<EmployeeDetails />} />
       </Route>
     </Routes>
   </BrowserRouter>,
