@@ -41,3 +41,20 @@ export const completeServiceTicket = (ticketId) => {
   })
   .catch(error => console.error('Error completing ticket:', error));
 };
+
+export const createServiceTicket = (ticketData) => {
+  return fetch('/api/servicetickets', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(ticketData),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to create service ticket');
+    }
+    return response.json(); 
+  })
+  .catch(error => console.error('Error creating service ticket:', error));
+};
